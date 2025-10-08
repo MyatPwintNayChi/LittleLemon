@@ -3,104 +3,88 @@
 .main {
   font-family: "Markazi Text", serif;
 }
+/* #f4ce14 */
+:root {
+  --primary-color: #dfbd01;
+  --secondary-color: #284f2b;
+  --tertiary-color: #fbdabb;
+  --dark-color: #333333;
+  --light-color: #edefee;
+}
+
+.text-teal {
+  color: var(--secondary-color) !important;
+}
+
+.text-yellow {
+  color: var(--primary-color) !important;
+}
+
+.nav-link:hover {
+  color: #173a1b !important;
+  text-decoration: underline;
+  transition: all 2000ms ease-in-out;
+}
+
+.navbar {
+  overflow-x: hidden;
+}
+
+.custom-toggler-icon {
+  font-size: 18px;
+}
+
+.hero-left-section {
+  width: 60%;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("images/green.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: #5f726e; */
+  /* background-color: #495e57; */
+}
 
 .logo {
-  cursor: pointer;
+  width: 200px;
+  max-width: 100%;
 }
 
-.header {
-  max-width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0px 160px;
+@media (max-width: 992px) {
+  .logo {
+    width: 160px;
+  }
 }
 
-.menu-item {
+.hero-right-section {
+  width: 40%;
+}
+
+.hero-image {
   width: 100%;
-  display: flex;
-  flex: 1;
-  gap: 40px;
-  list-style-type: none;
-  font-size: 26px;
+  height: 650px;
+  object-fit: cover;
 }
 
-.menu-item-link {
-  text-decoration: none;
-  color: #284f2b;
-  cursor: pointer;
-}
-
-.main-section-wrapper {
+.hero-section-small {
+  background-image: url("images/_\ \(2\).jpeg");
   height: 500px;
-  background-color: #495e57;
+  background-size: cover;
 }
 
-.main-section {
-  position: relative;
-  margin: 0px 160px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 200px;
+.hero-image-small {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 
-.main-left-section {
-  margin-top: 50px;
+.custom-btn-text {
+  color: #dfbd01;
 }
 
-.main-right-section {
-}
-
-.main-heading {
-  font-size: 60px;
-  color: #f4ce14;
-  margin: 0px;
-}
-
-.sub-heading {
-  font-size: 38px;
-  color: white;
-  margin: 0px;
-  margin-top: 10px;
-}
-
-.description {
-  font-size: 24px;
-  color: white;
-  margin-top: 30px;
-  margin-bottom: 40px;
-}
-
-.btn {
-  padding: 15px 30px;
-  background-color: #f4ce14;
-  outline: none;
-  border: none;
-  border-radius: 8px;
-  font-family: "Markazi Text", serif;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.main-image {
-  border-radius: 16px;
-  height: 520px;
-  transform: translateY(50px);
-}
-
-.weekly-special-section {
-  margin-top: 160px;
-  margin-left: 160px;
-  margin-right: 160px;
-}
-
-.first-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.weekly-special-heading {
-  font-size: 50px;
-  margin: 0px;
+.weekly-special-img {
+  height: 350px;
 }

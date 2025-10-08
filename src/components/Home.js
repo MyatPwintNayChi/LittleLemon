@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Highlights from "./Highlights";
-import Main from "./Main";
+import Herosection from "./Herosection";
 import Footer from "./Footer";
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
     <div className="main">
       <Header />
 
-      <Main />
+      <Herosection />
       <Highlights />
       <Footer />
     </div>
