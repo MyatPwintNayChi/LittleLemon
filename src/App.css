@@ -10,6 +10,7 @@
   --tertiary-color: #fbdabb;
   --dark-color: #333333;
   --light-color: #edefee;
+  --width: 20% !important;
 }
 
 .text-teal {
@@ -21,9 +22,8 @@
 }
 
 .nav-link:hover {
-  color: #173a1b !important;
+  color: #dfbd01 !important;
   text-decoration: underline;
-  transition: all 2000ms ease-in-out;
 }
 
 .navbar {
@@ -46,6 +46,15 @@
   background-size: cover;
   /* background-color: #5f726e; */
   /* background-color: #495e57; */
+}
+
+.hero-padding {
+  margin-top: 40px;
+}
+
+.menu-padding {
+  padding-top: 50px;
+  padding-bottom: 70px;
 }
 
 .logo {
@@ -86,5 +95,109 @@
 }
 
 .weekly-special-img {
-  height: 350px;
+  height: 380px;
+  object-fit: cover;
+}
+
+.card-background {
+  background-color: var(--secondary-color);
+}
+
+.custom-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.custom-img {
+  width: 450px;
+  height: 550px;
+  border-radius: 20px;
+}
+
+.custom-padding {
+  padding-top: 70px;
+}
+
+.custom-card {
+  padding-right: 20px;
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+/* .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #284f2b;
+  border-radius: 50%;
+} */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* .main-background {
+  background-image: url("./images/about2.jpg ");
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+.main-background {
+  position: relative;
+  background-image: url("./images/about2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 75vh;
+}
+
+.main-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+}
+
+.about-text {
+  position: relative;
+  /* keep your theme yellow-green tone */
+  color: #dfbd01;
+}
+
+.letter-space {
+  letter-spacing: 8px !important;
+}
+
+.small-text {
+  color: white;
+  z-index: 1;
+}
+
+.ourstory-left {
+  background-image: url("./images/Download\ White\ abstract\ background\ on\ 3d\ design\ for\ free.jpeg");
+  background-size: cover;
+  min-height: 408px;
+  padding-bottom: 10px;
+}
+
+.ourstory-right {
+  background-image: url("./images/_\ \(7\).jpeg");
+  min-height: 408px;
+  background-size: cover;
+}
+
+.left-section {
+}
+
+.sec-info-bg {
+  position: relative;
+  background-image: url("./images/background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+}
+.sec-info-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
 }

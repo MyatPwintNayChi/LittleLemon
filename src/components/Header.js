@@ -1,6 +1,7 @@
 import logo from "../images/Logo.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { Link } from "react-router-dom";
 
 function Header() {
   // <div className="px-5 pt-2">
@@ -138,7 +139,7 @@ function Header() {
   //   </div>
   // </nav>
   return (
-    <nav className="navbar navbar-expand-lg px-lg-5 pt-2  fixed-top bg-white ">
+    <nav className="navbar navbar-expand-lg px-lg-5 pt-2  fixed-top bg-white vw-100 ">
       <div className="container-fluid px-sm-3">
         <a href="#" className="navbar-brand">
           <img className="logo" src={logo} alt="LittleLemon_Logo" width={200} />
@@ -160,15 +161,15 @@ function Header() {
               <a
                 className="nav-link scrollto text-teal"
                 aria-current="page"
-                href="#"
+                href="../"
               >
                 Home
               </a>
             </li>
             <li className="nav-item fs-3">
-              <a className="nav-link scrollto text-teal" href="#about">
+              <Link to="/about-us" className="nav-link text-teal">
                 About
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item fs-3">

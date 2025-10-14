@@ -1,4 +1,9 @@
 function Button(props) {
-  return <button className="btn">{props.name}</button>;
+  return (
+    <button type="submit" className="btn btn-warning text-dark  text-uppercase">
+      {props.name}
+    </button>
+  );
 }
+
 export default Button;

@@ -1,5 +1,3 @@
-import Button from "./Button";
-import mainImage from "../images/restauranfood.jpg";
 import mainImage2 from "../images/_ (2).jpeg";
 function Herosection() {
   return (
@@ -48,7 +46,7 @@ function Herosection() {
     //   </section>
     // </div>
 
-    <div className="container-fluid  w-100 h-auto py-2 px-0 ">
+    <div className="container-fluid  w-100 h-auto pt-2 px-0 hero-padding">
       <div className="d-lg-none d-sm-block hero-section-small">
         <div className="pt-5">
           <header className="text-center my-5 mx-5 pt-4">
@@ -74,7 +72,9 @@ function Herosection() {
         <div className="d-flex ">
           <div className="hero-left-section bg-success-subtle">
             <header className="text-start my-5 mx-5">
-              <h1 className="display-1 fw-bold text-teal">Little Lemon</h1>
+              <h1 className="display-1 fw-bold text-teal">
+                Little <span className="text-yellow">Lemon</span>
+              </h1>
 
               <p className="fs-4 text-teal ">
                 "Indulge in Culinary Delight: Where Tradition Meets Modern
