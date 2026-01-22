@@ -1,9 +1,16 @@
 import Button from "../components/Button";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Information() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <section className="py-5 bg-white sec-info-bg">
-      <div className="container text-light">
+      <div className="container text-light" data-aos="fade-up">
         <div className="row justify-content-center g-5">
           <div
             className="col-12 col-md-5 text-center  p-4 bg-success bg-opacity-50"
@@ -13,18 +20,16 @@ function Information() {
               Hours Of Operation
             </h3>
             <p className="mb-2 fw-bold text-yellow">MON - FRI</p>
-            <p className="text-yellow">
-              10:00am - 1:00pm
-              <br />
-              4:00pm - 10:30pm
-            </p>
+            <p className="text-yellow">10:00am - 10:30pm</p>
             <hr className="border-white mx-auto" style={{ width: "50%" }} />
             <p className="mb-2 fw-bold text-yellow">SAT</p>
-            <p className="text-yellow">3:00pm - 10:30pm</p>
+            <p className="text-yellow">11:00am - 10:30pm</p>
             <hr className="border-white mx-auto" style={{ width: "50%" }} />
             <p className="mb-2 fw-bold text-yellow">SUN</p>
             <p className="text-danger fw-bold">We are closed.</p>
-            <Button name="make a reservation" />
+            <Link to="/reservation" araia-label="Go to reservation page">
+              <Button name="make a reservation" />
+            </Link>
           </div>
 
           <div
@@ -57,7 +62,9 @@ function Information() {
                   placeholder="Email"
                 />
               </div>
-              <Button name="contact us" style={{ width: "100%" }} />
+              <Link to="/contact" araia-label="Go to contact page">
+                <Button name="contact us" style={{ width: "100%" }} />
+              </Link>
             </form>
           </div>
         </div>

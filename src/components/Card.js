@@ -19,7 +19,7 @@ function Card(props) {
           <p className="card-text fw-bold fs-3 text-teal m-0">{props.price}</p>
           <div className="text-center">
             <a
-              href="#"
+              href="/menu"
               className="btn btn-warning text-dark text-uppercase text-center "
             >
               View Menu

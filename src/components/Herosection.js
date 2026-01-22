@@ -1,52 +1,18 @@
 import mainImage2 from "../images/_ (2).jpeg";
+import { useNavigate } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 function Herosection() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
-    // <div className="herosection-wrapper">
-    //   <div className="main-section">
-    //     <div className="main-left-section">
-    //       {/* <div className="bg-style"></div> */}
-    //       <h1 className="main-heading">Little Lemon</h1>
-    //       <p className="sub-heading">Chicago</p>
-    //       <p className="description">
-    //         We are a family owned Mediterranean restaurant, focused on
-    //         traditional recipes served with a modern twist.
-    //       </p>
-    //       <Button name="Reserve a Table" />
-    //     </div>
-    //     <div className="main-right-section">
-    //       <div className="main-image">
-    //         <img
-    //           className="image-size img-left"
-    //           src={mainImage}
-    //           alt="hero-section-img"
-    //         />
-    //       </div>
-    //       <div className="main-image">
-    //         <img
-    //           className="image-size img-right"
-    //           src={mainImage2}
-    //           alt="hero-section-img"
-    //         />
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-    // <div>
-    //   <section className="hero">
-    //     <img src={mainImage} alt="Mediterranean dishes" className="hero-bg" />
-    //     <div className="overlay"></div>
-    //     <div className="hero-content">
-    //       <h1>Little Lemon</h1>
-    //       <h2>Chicago</h2>
-    //       <p>Authentic Mediterranean recipes with a modern twist.</p>
-    //       <a href="#" className="btn-primary">
-    //         Reserve a Table
-    //       </a>
-    //     </div>
-    //   </section>
-    // </div>
-
-    <div className="container-fluid  w-100 h-auto pt-2 px-0 hero-padding">
+    <div
+      className="container-fluid  w-100 h-auto pt-2 px-0 hero-padding"
+      data-aos="fade-right"
+    >
       <div className="d-lg-none d-sm-block hero-section-small">
         <div className="pt-5">
           <header className="text-center my-5 mx-5 pt-4">
@@ -59,7 +25,11 @@ function Herosection() {
           </header>
         </div>
         <div className="d-flex justify-content-center align-items-center">
-          <button type="button" className="btn btn-outline-success me-4 fs-4">
+          <button
+            type="button"
+            className="btn btn-outline-success me-4 fs-4 "
+            onClick={() => navigate("/menu")}
+          >
             Our Menu
           </button>
           <button type="button" className="btn btn-success me-3 fs-4">
@@ -84,10 +54,15 @@ function Herosection() {
                 <button
                   type="button"
                   className="btn btn-outline-success me-4 fs-4 "
+                  onClick={() => navigate("/menu")}
                 >
                   Our Menu
                 </button>
-                <button type="button" className="btn btn-success me-3 fs-4 ">
+                <button
+                  type="button"
+                  className="btn btn-success me-3 fs-4 "
+                  onClick={() => navigate("/reservation")}
+                >
                   Reserve a Table
                 </button>
               </div>

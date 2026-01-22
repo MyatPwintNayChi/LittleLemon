@@ -59,10 +59,14 @@ function WhoWeAre() {
                   Our Promise to You
                 </h5>
                 <p className="card-text text-muted fs-5">
-                  At Little Lemon, your satisfaction comes first. Whether it’s a
-                  family dinner, a casual lunch, or a romantic evening, we
-                  promise warm hospitality, honest flavors, and a welcoming
-                  atmosphere every time you visit.
+                  At{" "}
+                  <span className="fw-bold text-teal fst-italic">
+                    Little Lemon
+                  </span>
+                  , your satisfaction comes first. Whether it’s a family dinner,
+                  a casual lunch, or a romantic evening, we promise warm
+                  hospitality, honest flavors, and a welcoming atmosphere every
+                  time you visit.
                 </p>
               </div>
             </div>

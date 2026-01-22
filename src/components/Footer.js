@@ -1,3 +1,4 @@
+import Logo from "../images/Logo-removebg-preview.png";
 function Footer() {
   return (
     <footer className="bg-success-subtle  pt-5 pb-3 mt-5">
@@ -5,10 +6,8 @@ function Footer() {
         <div className="row text-center text-md-start">
           {/* Column 1 - Logo & About */}
           <div className="col-12 col-md-4 mb-4">
-            <h4 className="text-teal fw-bold mb-3 fs-3">
-              Little <span className="text-yellow">Lemon</span>
-            </h4>
-            <p className="text-teal small">
+            <img src={Logo} alt="Little Lemon Logo" width={150} />
+            <p className="text-teal small mt-3">
               Experience the taste of Mediterranean freshness with every dish.
               We bring family, friends, and flavors together.
             </p>

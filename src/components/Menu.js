@@ -1,88 +1,10 @@
 import ImageCarousel from "./imageCarousel";
-import dish from "../images/Spaghetti Bolognese.jpeg";
-import dish2 from "../images/DijonChicken.jpeg";
-import dish3 from "../images/Shakshuka.jpeg";
-import dish4 from "../images/_ (4).jpeg";
-import dish5 from "../images/Seafood Stew.jpeg";
-import dish6 from "../images/Stuffed Salmon.jpeg";
-import dish7 from "../images/stake.jpeg";
-import dish8 from "../images/ Bruschetta.jpeg";
-import dish9 from "../images/greeksalad.jpeg";
+import menuItems from "./menuItem";
 import Card from "./Card";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
-const menuItems = [
-  {
-    id: 1,
-    image: dish,
-    title: "Spaghetti Bolognese",
-    price: "$12.99",
-    description:
-      "Classic Italian pasta with rich, meaty tomato sauce and fresh herbs.",
-  },
-  {
-    id: 2,
-    image: dish2,
-    title: "Dijon Chicken",
-    price: "$13.49",
-    description: "Tender chicken simmered in creamy Dijon mustard sauce.",
-  },
-  {
-    id: 3,
-    image: dish3,
-    title: "Mexican-style Shashuka",
-    price: "$11.99",
-    description: "Spicy tomato and pepper stew topped with poached eggs.",
-  },
-  {
-    id: 4,
-    image: dish4,
-    title: "Sheet pan chicken",
-    price: "$12.49",
-    description:
-      "Oven-roasted chicken with vegetables, seasoned for a simple and tasty meal.",
-  },
-  {
-    id: 5,
-    image: dish5,
-    title: "Seafood Stew",
-    price: "$14.99",
-    description:
-      "A hearty mix of fresh seafood simmered in a rich, flavorful broth.",
-  },
-  {
-    id: 6,
-    image: dish6,
-    title: "Stuffed Salmon",
-    price: "$15.99",
-    description:
-      "Fresh salmon fillet filled with creamy spinach and herbs, baked to perfection.",
-  },
-  {
-    id: 7,
-    image: dish7,
-    title: "Stake",
-    price: "$13.99",
-    description: "Dense Bean Salad with Steak – Bold, Fresh & Filling",
-  },
-  {
-    id: 8,
-    image: dish8,
-    title: "Bruschetta",
-    price: "$6.99",
-    description:
-      "Grilled bread topped with garlic, tomatoes, olive oil, and fresh basil.",
-  },
-  {
-    id: 9,
-    image: dish9,
-    title: "Greek Salad",
-    price: "$12.99",
-    description:
-      "A classic Greek salad with fresh veggies, feta cheese, and crunchy garlic croutons.",
-  },
-];
+
 function Menu() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 960);
   useEffect(() => {

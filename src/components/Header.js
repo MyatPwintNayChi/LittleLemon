@@ -2,6 +2,7 @@ import logo from "../images/Logo.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   // <div className="px-5 pt-2">
@@ -158,36 +159,57 @@ function Header() {
         <div className="collapse navbar-collapse  " id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto gap-4 ">
             <li className="nav-item fs-3">
-              <a
-                className="nav-link scrollto text-teal"
-                aria-current="page"
-                href="../"
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `nav-link scrollto ${isActive ? "text-yellow" : "text-teal"}`
+                }
               >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item fs-3">
-              <Link to="/about-us" className="nav-link text-teal">
+              <NavLink
+                to="/about-us"
+                className={({ isActive }) =>
+                  `nav-link scrollto ${isActive ? "text-yellow" : "text-teal"}`
+                }
+              >
                 About
-              </Link>
+              </NavLink>
             </li>
 
             <li className="nav-item fs-3">
-              <a className="nav-link scrollto text-teal" href="#menu">
+              <NavLink
+                to="/menu"
+                className={({ isActive }) =>
+                  `nav-link scrollto ${isActive ? "text-yellow" : "text-teal"}`
+                }
+              >
                 Menu
-              </a>
+              </NavLink>
             </li>
 
             <li className="nav-item fs-3">
-              <a className="nav-link scrollto text-teal" href="#gallery">
-                Gallery
-              </a>
+              <NavLink
+                to="/reservation"
+                className={({ isActive }) =>
+                  `nav-link scrollto ${isActive ? "text-yellow" : "text-teal"}`
+                }
+              >
+                Reservation
+              </NavLink>
             </li>
 
             <li className="nav-item fs-3">
-              <a className="nav-link scrollto text-teal" href="#contact">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `nav-link scrollto ${isActive ? "text-yellow" : "text-teal"}`
+                }
+              >
                 Contact
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
