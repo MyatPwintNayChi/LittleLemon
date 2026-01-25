@@ -6,16 +6,20 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import image from "../images/Reserved Sign for Restaurants Bars Cafes _ Personalized Reserved Table Signs _ Sign for Business _ Reception Sign _ Hotel Sign - Etsy.jpeg";
 import Footer from "../components/Footer";
+import LemonImage from "../images/lemon.png";
+import ConfirmImage from "../images/check-mail (1).png";
 function Reservation() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
-  const [showModal, setShowModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    guests: "",
+    guests: 1,
     date: "",
     time: "",
     request: "",
@@ -51,7 +55,7 @@ function Reservation() {
     const day = selectedDate.getDay(); // 0 = Sunday, 6 = Saturday
 
     if (day === 0) {
-      setShowModal(true);
+      setShowErrorModal(true);
       setFormData({ ...formData, date: "", time: "" });
     } else {
       setFormData({ ...formData, date: e.target.value });
@@ -73,17 +77,36 @@ function Reservation() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Reservation submitted successfully!");
+    console.log(formData);
+    setShowConfirmModal(true);
+  };
+
+  const handleConfirmSubmit = (e) => {
+    e.preventDefault();
+    setShowSuccessModal(true);
+    setShowConfirmModal(false);
+  };
+
+  const handleSuccessClose = () => {
+    setShowSuccessModal(false);
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      guests: 1,
+      date: "",
+      time: "",
+      request: "",
+    });
   };
 
   const handleCloseModal = () => {
-    setShowModal(false);
+    setShowErrorModal(false);
   };
 
   return (
     <div className="container-fluid main mx-0 px-0 bg-white ">
       <Header />
-
       <div
         className=" mt-5 reservation-bg d-flex flex-column justify-content-center align-items-center"
         data-aos="fade-right"
@@ -98,8 +121,8 @@ function Reservation() {
           Enjoy a cozy dining experience at Little Lemon. Reserve your table in
           advance and let us prepare your perfect meal.
         </p> */}
-        <p className="fst-italic fs-4 small-text letter-space">
-          Enjoy a cozy dining experience at Little Lemon.
+        <p className="fst-italic fs-4 small-text letter-space text-center">
+          Reserve your table in just a few steps.
         </p>
       </div>
       <div className=" form_bg">
@@ -113,15 +136,19 @@ function Reservation() {
             comfortable, smooth, and enjoyable.
           </p>
         </div>
-        <div className="pb-5">
+        <div className="container px-3 px-sm-4 px-md-0 pb-0 pb-lg-5 ">
           <form
             onSubmit={handleSubmit}
-            className="mx-auto border border-success shadow-lg p-5 rounded-4  mb-5 bg-white"
+            className="mx-auto  border border-success shadow-lg p-5 rounded-4  mb-5 bg-white"
             style={{ maxWidth: "980px" }}
+            data-aos="fade-right"
           >
             <div className="row">
               <div className="col-md-6 mb-3">
-                <label className="form-label text-teal fw-semibold fs-5">
+                <label
+                  className="form-label text-teal fw-semibold fs-5"
+                  for="name"
+                >
                   Name*
                 </label>
                 <input
@@ -177,6 +204,9 @@ function Reservation() {
                   onChange={handleChange}
                   required
                 />
+                <small className="text-yellow   fw-bold fs-6">
+                  Maximum 6 guests.
+                </small>
               </div>
             </div>
             <div className="row">
@@ -190,6 +220,7 @@ function Reservation() {
                   name="date"
                   value={formData.date}
                   onChange={handleDateChange}
+                  min={new Date().toISOString().split("T")[0]}
                   required
                 />
               </div>
@@ -240,8 +271,10 @@ function Reservation() {
           </form>
         </div>
       </div>
+
+      {/* Error Modal for Unavailable Day (Sunday) */}
       <div
-        className={`modal fade ${showModal ? "show d-block" : ""}`}
+        className={`modal fade ${showErrorModal ? "show d-block" : ""}`}
         tabIndex="-1"
         style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
       >
@@ -273,14 +306,141 @@ function Reservation() {
         </div>
       </div>
 
+      {showConfirmModal && (
+        <div
+          className="modal fade show "
+          style={{ display: "block", backgroundColor: "rgba(0,0,0,0.5)" }}
+          tabIndex="-1"
+        >
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content rounded-4">
+              <div className="modal-header">
+                <h5 className="modal-title fs-3 text-teal fw-bold">
+                  Confirm <span className="text-yellow">Your Reservation</span>
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={() => setShowConfirmModal(false)}
+                />
+              </div>
+
+              <div className="modal-body">
+                <p className="text-teal fs-5 fw-semibold">
+                  Please confirm your reservation details:
+                </p>
+
+                <ul className="list-unstyled small fs-5 text-teal">
+                  <li>
+                    <strong>Date:</strong>{" "}
+                    <span className="text-teal">{formData.date}</span>
+                  </li>
+                  <li>
+                    <strong>Time:</strong> {formData.time}
+                  </li>
+                  <li>
+                    <strong>Guests:</strong> {formData.guests}
+                  </li>
+                  <li>
+                    <strong>Special Request:</strong>{" "}
+                    {formData.request?.trim() || "None"}
+                  </li>
+                </ul>
+              </div>
+
+              <div className="modal-footer">
+                <button
+                  className="btn btn-outline-warning text-uppercase text-teal"
+                  onClick={() => setShowConfirmModal(false)}
+                >
+                  Edit
+                </button>
+
+                <button
+                  type="submit"
+                  className="btn btn-success text-uppercase text-white ms-3"
+                  onClick={handleConfirmSubmit}
+                >
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* backdrop */}
+        </div>
+      )}
+
+      {showSuccessModal && (
+        <div
+          className="modal fade show"
+          style={{ display: "block", backgroundColor: "rgba(0,0,0,0.5)" }}
+          tabIndex="-1"
+        >
+          <div className="modal-dialog modal-dialog-centered ">
+            <div className="modal-content rounded-4 shadow-lg  pt-2">
+              {/* Modal Header */}
+              <div className="modal-header   px-4 ">
+                <h5 className="modal-title fw-bold text-teal fs-2  ">
+                  {/* <img
+                    src={ConfirmImage}
+                    alt="Lemon"
+                    className="custom-confirm-img"
+                  /> */}
+                  Reservation <span className="text-yellow">Confirmed!</span>
+                </h5>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={() => setShowConfirmModal(false)}
+                ></button>
+              </div>
+
+              {/* Modal Body */}
+              <div className="modal-body px-4">
+                <p className="mb-3 fs-5 text-teal">
+                  Thank you for choosing {""}
+                  <span className="text-uppercase fw-bold letter-space-small ">
+                    <img
+                      src={LemonImage}
+                      alt="Lemon"
+                      className="custom-lemon-img"
+                    />
+                    Little Lemon.
+                  </span>
+                  <br />
+                  Your reservation request has been received.
+                </p>
+
+                <p className="text-muted small ">
+                  We look forward to welcoming you and making your experience
+                  special.
+                </p>
+              </div>
+
+              {/* Modal Footer */}
+              <div className="modal-footer ">
+                <button
+                  type="button"
+                  className="btn btn-warning text-teal text-uppercase px-4"
+                  onClick={handleSuccessClose}
+                >
+                  close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="text-center mt-5 mb-5 ">
         <h3 className="fw-bold text-teal mb-3 fs-3 ">Operating Hours</h3>
         <p className="mb-1 fs-5">Monday – Friday: 10:00 AM – 10:30 PM</p>
         <p className="mb-1 fs-5">Saturday: 11:00 AM – 10:30 PM</p>
         <p className="text-danger fw-semibold fs-5">Sunday: Closed</p>
         <p className="text-muted mt-3 fs-5 fst-italic pb-4">
-          We’re closed on Sundays. Reservations are available only during our
-          operating hours.
+          We’re closed on{" "}
+          <span className="text-danger fw-semibold">Sundays.</span> Reservations
+          are available only during our operating hours.
         </p>
       </div>
     </div>

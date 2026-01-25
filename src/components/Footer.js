@@ -1,4 +1,5 @@
 import Logo from "../images/Logo-removebg-preview.png";
+
 function Footer() {
   return (
     <footer className="bg-success-subtle  pt-5 pb-3 mt-5">
@@ -20,22 +21,22 @@ function Footer() {
             </h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#home" className="text-teal ">
+                <a href="#" className="text-teal ">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#menu" className="text-teal hover">
+                <a href="/menu" className="text-teal hover">
                   Menu
                 </a>
               </li>
               <li>
-                <a href="#reservation" className="text-teal ">
+                <a href="/reservation" className="text-teal ">
                   Reservation
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-teal">
+                <a href="/contact" className="text-teal">
                   Contact
                 </a>
               </li>

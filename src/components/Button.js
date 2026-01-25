@@ -1,6 +1,9 @@
 function Button(props) {
   return (
-    <button type="submit" className="btn btn-warning text-dark  text-uppercase">
+    <button
+      type="submit"
+      className="btn btn-success text-white  text-uppercase"
+    >
       {props.name}
     </button>
   );

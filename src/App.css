@@ -181,7 +181,11 @@
 }
 
 .letter-space {
-  letter-spacing: 8px !important;
+  letter-spacing: 6px !important;
+}
+
+.letter-space-small {
+  letter-spacing: 3px !important;
 }
 
 .small-text {
@@ -244,10 +248,23 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
 }
 
 .form_bg {
   background-image: url("./images/form_bg.jpeg");
   background-size: cover;
+}
+.custom-confirm-img {
+  width: 35px;
+  height: 35px;
+  margin-top: -6px;
+  margin-right: 10px;
+}
+
+.custom-lemon-img {
+  width: 30px;
+  height: 30px;
+  margin-top: -6px;
+  margin-right: 4px;
 }
