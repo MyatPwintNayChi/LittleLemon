@@ -7,7 +7,10 @@ import { useEffect } from "react";
 import image from "../images/Reserved Sign for Restaurants Bars Cafes _ Personalized Reserved Table Signs _ Sign for Business _ Reception Sign _ Hotel Sign - Etsy.jpeg";
 import Footer from "../components/Footer";
 import LemonImage from "../images/lemon.png";
-import ConfirmImage from "../images/check-mail (1).png";
+import CloseImage from "../images/closed.png";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { db } from "../firebase";
+
 function Reservation() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -47,6 +50,9 @@ function Reservation() {
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === "phone") {
+      if (!/^\d*$/.test(value)) return;
+    }
     setFormData({ ...formData, [name]: value });
   };
 
@@ -78,13 +84,37 @@ function Reservation() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    const phoneRegex = /^(06|08|09)\d{8}$/;
+
+    if (!phoneRegex.test(formData.phone)) {
+      alert("Please enter a valid phone number");
+      return;
+    }
     setShowConfirmModal(true);
   };
 
-  const handleConfirmSubmit = (e) => {
+  // const handleConfirmSubmit = (e) => {
+  //   e.preventDefault();
+  //   setShowSuccessModal(true);
+  //   setShowConfirmModal(false);
+  // };
+
+  const handleConfirmSubmit = async (e) => {
     e.preventDefault();
-    setShowSuccessModal(true);
-    setShowConfirmModal(false);
+
+    try {
+      await addDoc(collection(db, "reservations"), {
+        ...formData,
+        status: "pending",
+        createdAt: Timestamp.now(),
+      });
+
+      setShowConfirmModal(false);
+      setShowSuccessModal(true);
+    } catch (error) {
+      console.error("Error saving reservation:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   const handleSuccessClose = () => {
@@ -142,6 +172,7 @@ function Reservation() {
             className="mx-auto  border border-success shadow-lg p-5 rounded-4  mb-5 bg-white"
             style={{ maxWidth: "980px" }}
             data-aos="fade-right"
+            method="POST"
           >
             <div className="row">
               <div className="col-md-6 mb-3">
@@ -180,13 +211,25 @@ function Reservation() {
                 <label className="form-label text-teal fw-semibold fs-5">
                   Phone Number*
                 </label>
-                <input
+                {/* <input
                   type="tel"
                   name="phone"
                   className="form-control fs-5"
                   value={formData.phone}
                   onChange={handleChange}
                   required
+                /> */}
+
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="0X-XXXX-XXXX"
+                  pattern="0[0-9]{9}"
+                  maxLength="10"
+                  required
+                  className="form-control fs-5"
                 />
               </div>
 
@@ -281,7 +324,15 @@ function Reservation() {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title text-danger fs-4">Unavailable Day</h5>
+              <img
+                src={CloseImage}
+                alt="Close"
+                className="me-2 ms-1"
+                width="38"
+              />
+              <h5 className="modal-title text-danger fs-3 ">
+                Unavailable Day!
+              </h5>
               <button
                 type="button"
                 className="btn-close"
@@ -289,14 +340,16 @@ function Reservation() {
               ></button>
             </div>
             <div className="modal-body">
-              <p className="text-teal fs-5">
-                We’re closed on Sundays. Please select another date.
+              <p className="text-teal fs-5 ms-1">
+                We’re closed on{" "}
+                <span className="text-danger fst-italic ">Sundays.</span> Please
+                select another date.
               </p>
             </div>
             <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-warning text-dark"
+                className="btn btn-success text-white"
                 onClick={handleCloseModal}
               >
                 CLOSE
@@ -306,6 +359,7 @@ function Reservation() {
         </div>
       </div>
 
+      {/* confirmation Modal */}
       {showConfirmModal && (
         <div
           className="modal fade show "
@@ -332,15 +386,25 @@ function Reservation() {
 
                 <ul className="list-unstyled small fs-5 text-teal">
                   <li>
+                    <strong>Name:</strong> {formData.name}
+                  </li>
+                  <li>
+                    <strong>Email:</strong> {formData.email}
+                  </li>
+                  <li>
+                    <strong>Ph number:</strong> {formData.phone}
+                  </li>
+                  <li>
+                    <strong>Guests:</strong> {formData.guests}
+                  </li>
+                  <li>
                     <strong>Date:</strong>{" "}
                     <span className="text-teal">{formData.date}</span>
                   </li>
                   <li>
                     <strong>Time:</strong> {formData.time}
                   </li>
-                  <li>
-                    <strong>Guests:</strong> {formData.guests}
-                  </li>
+
                   <li>
                     <strong>Special Request:</strong>{" "}
                     {formData.request?.trim() || "None"}
@@ -412,7 +476,7 @@ function Reservation() {
                   Your reservation request has been received.
                 </p>
 
-                <p className="text-muted small ">
+                <p className="text-teal  fst-italic  fw-semibold">
                   We look forward to welcoming you and making your experience
                   special.
                 </p>
@@ -422,7 +486,7 @@ function Reservation() {
               <div className="modal-footer ">
                 <button
                   type="button"
-                  className="btn btn-warning text-teal text-uppercase px-4"
+                  className="btn btn-success text-white text-uppercase px-4"
                   onClick={handleSuccessClose}
                 >
                   close

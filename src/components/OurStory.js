@@ -1,5 +1,6 @@
 import food from "../images/food.jpeg";
 import eatingfood from "../images/Flying Salad Bowl .jpeg";
+import EatingTogether from "../images/eatingtogether.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -36,15 +37,17 @@ function OurStory() {
         </div>
       </div>
 
-      <div className=" container w-100 w-lg-75 mx-auto d-flex flex-column flex-lg-row justify-content-center align-items-center  py-5  ">
+      <div className=" container w-100 w-lg-75 mx-auto d-flex flex-column flex-lg-row justify-content-center align-items-center py-5  ">
         <div className=" w-md-50  d-flex justify-content-center align-items-center mb-4 mb-lg-0 d-none d-lg-block">
           <img
-            src={eatingfood}
+            src={EatingTogether}
             alt="food-image"
             style={{
-              height: "400px",
-              width: "400px",
+              height: "490px",
+              width: "520px",
               objectFit: "cover",
+              marginRight: "30px",
+              borderRadius: "15px",
             }}
           />
         </div>

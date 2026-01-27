@@ -196,13 +196,13 @@
 .ourstory-left {
   background-image: url("./images/Download\ White\ abstract\ background\ on\ 3d\ design\ for\ free.jpeg");
   background-size: cover;
-  min-height: 408px;
+  min-height: 400px;
   padding-bottom: 10px;
 }
 
 .ourstory-right {
-  background-image: url("./images/_\ \(7\).jpeg");
-  min-height: 408px;
+  background-image: url("./images/res_bg.png");
+  min-height: 400px;
   background-size: cover;
 }
 
@@ -211,7 +211,7 @@
 
 .sec-info-bg {
   position: relative;
-  background-image: url("./images/background.jpeg");
+  background-image: url("./images/res_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: auto;

@@ -13,27 +13,32 @@ function Information() {
       <div className="container text-light" data-aos="fade-up">
         <div className="row justify-content-center g-5">
           <div
-            className="col-12 col-md-5 text-center  p-4 bg-success bg-opacity-50"
+            className="col-12 col-md-5 text-center  p-4 bg-success bg-opacity-75  "
             style={{ zIndex: "1" }}
           >
             <h3 className="mb-4 text-uppercase text-yellow fw-bold">
               Hours Of Operation
             </h3>
-            <p className="mb-2 fw-bold text-yellow">MON - FRI</p>
-            <p className="text-yellow">10:00am - 10:30pm</p>
+            <p className="mb-2 fw-bold text-white">MON - FRI</p>
+            <p className="text-white">10:00am - 10:30pm</p>
             <hr className="border-white mx-auto" style={{ width: "50%" }} />
-            <p className="mb-2 fw-bold text-yellow">SAT</p>
-            <p className="text-yellow">11:00am - 10:30pm</p>
+            <p className="mb-2 fw-bold text-white">SAT</p>
+            <p className="text-white">11:00am - 10:30pm</p>
             <hr className="border-white mx-auto" style={{ width: "50%" }} />
-            <p className="mb-2 fw-bold text-yellow">SUN</p>
-            <p className="text-danger fw-bold">We are closed.</p>
+            <p className="mb-2 fw-bold text-white">SUN</p>
+            <p className="text-yellow fw-bold fs-5 ">WE ARE CLOSED.</p>
             <Link to="/reservation" araia-label="Go to reservation page">
-              <Button name="make a reservation" />
+              <button
+                type="button"
+                className="btn btn-outline-warning mt-3 px-4  fw-semibold text-white text-uppercase"
+              >
+                Make a Reservation
+              </button>
             </Link>
           </div>
 
           <div
-            className="col-12 col-md-5 text-center  p-4 rounded-lg-end-4 bg-body-tertiary bg-opacity-50  "
+            className="col-12 col-md-5 text-center  p-4 rounded-lg-end-4 bg-body-tertiary bg-opacity-75  "
             style={{ zIndex: "1" }}
           >
             <h3 className="mb-2 text-teal fs-2 fw-bold">Our Newsletter</h3>
