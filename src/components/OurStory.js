@@ -11,6 +11,35 @@ function OurStory() {
   }, []);
   return (
     <div className="container-fluid px-0" data-aos="fade-right">
+      <div className=" container w-100 w-lg-75 mx-auto d-flex flex-column flex-lg-row justify-content-center align-items-center py-5  ">
+        <div className=" w-md-75  d-flex justify-content-center align-items-center mb-4 mb-lg-0 d-none d-lg-block">
+          <img
+            src={EatingTogether}
+            alt="food-image"
+            style={{
+              height: "490px",
+              width: "520px",
+              objectFit: "cover",
+              marginRight: "30px",
+              borderRadius: "15px",
+            }}
+          />
+        </div>
+        <div className="left-section w-100 w-md-35 text-center px-5 ">
+          <h2 className="display-6 fw-bold text-teal pb-4">
+            We Make Every<span className="text-yellow"> Moment</span> Special
+          </h2>
+          <p className="fs-5 text-teal ">
+            At{" "}
+            <span className="fw-bold text-teal fst-italic">Little Lemon</span>,
+            we believe that dining is more than just enjoying good food — it’s
+            about creating moments that linger in your heart. From the welcoming
+            atmosphere to the carefully crafted dishes and attentive service, we
+            make every moment special, turning each visit into a warm and
+            memorable experience.
+          </p>
+        </div>
+      </div>
       <div className="bg-light px-0 ">
         <div className="d-flex flex-column flex-lg-row justify-content-center align-items-center  ">
           <div className="ourstory-left w-100 w-lg-50  text-center px-5 ">
@@ -34,36 +63,6 @@ function OurStory() {
             </p>
           </div>
           <div className="w-100 w-lg-50 d-flex align-items-stretch ourstory-right"></div>
-        </div>
-      </div>
-
-      <div className=" container w-100 w-lg-75 mx-auto d-flex flex-column flex-lg-row justify-content-center align-items-center py-5  ">
-        <div className=" w-md-50  d-flex justify-content-center align-items-center mb-4 mb-lg-0 d-none d-lg-block">
-          <img
-            src={EatingTogether}
-            alt="food-image"
-            style={{
-              height: "490px",
-              width: "520px",
-              objectFit: "cover",
-              marginRight: "30px",
-              borderRadius: "15px",
-            }}
-          />
-        </div>
-        <div className="left-section w-100 w-md-50 text-center px-5 ">
-          <h2 className="display-6 fw-bold text-teal pb-4">
-            We Make Every<span className="text-yellow"> Moment</span> Special
-          </h2>
-          <p className="fs-5 text-teal ">
-            At{" "}
-            <span className="fw-bold text-teal fst-italic">Little Lemon</span>,
-            we believe that dining is more than just enjoying good food — it’s
-            about creating moments that linger in your heart. From the welcoming
-            atmosphere to the carefully crafted dishes and attentive service, we
-            make every moment special, turning each visit into a warm and
-            memorable experience.
-          </p>
         </div>
       </div>
     </div>

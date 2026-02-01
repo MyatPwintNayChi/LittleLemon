@@ -2,7 +2,7 @@ import Logo from "../images/Logo-removebg-preview.png";
 
 function Footer() {
   return (
-    <footer className="bg-success-subtle  pt-5 pb-3 mt-5">
+    <footer className="bg-success-subtle  pt-5 pb-3 ">
       <div className="container text-center">
         <div className="row text-center text-md-start">
           {/* Column 1 - Logo & About */}

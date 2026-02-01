@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import restaurant from "../images/Tabletop kitchen with blurred background for your product _ Premium AI-generated image.jpeg";
+import OurStorySection from "../components/OurStorySection";
+import Footer from "../components/Footer";
 function About() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -22,10 +24,12 @@ function About() {
         </p>
         <p className="fst-italic fs-3 small-text letter-space">Our Story</p>
       </div>
-
+      <OurStorySection />
       <WhoWeAre />
-      <OurStory />
-      <Information />
+      {/* <OurStory /> */}
+
+      {/* <Information /> */}
+      <Footer />
     </div>
   );
 }
