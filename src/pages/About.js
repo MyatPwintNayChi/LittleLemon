@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Information from "../components/Information";
 import OurStory from "../components/OurStory";
+import MeetOurStaff from "../components/MeetOurStaff";
 import WhoWeAre from "../components/WhoWeAre";
 import { useEffect } from "react";
 import Aos from "aos";
@@ -26,6 +27,7 @@ function About() {
       </div>
       <OurStorySection />
       <WhoWeAre />
+      <MeetOurStaff />
       {/* <OurStory /> */}
 
       {/* <Information /> */}

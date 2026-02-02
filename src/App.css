@@ -198,31 +198,34 @@
   margin: auto;
 }
 
+.about-img {
+  margin-left: 70px;
+}
+
 /* Desktop overlapping */
 .about-img-top {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -90px;
   width: 70%;
   z-index: 2;
 }
 
 .about-img-bottom {
-  margin-top: 120px;
   width: 70%;
+  margin-top: 180px;
+  margin-left: 0px;
 }
 
-/* Mobile fix */
-@media (max-width: 991px) {
-  .about-img-top,
-  .about-img-bottom {
+@media (min-width: 992px) and (max-width: 1199px) {
+  .about-img-top {
     position: static;
     width: 100%;
     margin-top: 0;
   }
 
   .about-img-bottom {
-    margin-top: 20px;
+    display: none;
   }
 }
 

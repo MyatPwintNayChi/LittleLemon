@@ -6,22 +6,24 @@ function WhoWeAre() {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <div
-      className="py-5 bg-body-secondary "
-      id="who-we-are"
-      data-aos="fade-right"
-    >
+    <div className="py-5 bg-body-secondary " id="who-we-are">
       <div className="container text-center pb-5">
-        <h2 className="display-5 fw-bold text-teal mb-5 mt-4">
-          Who <span className="text-yellow"> We Are</span>
+        <h2
+          className="display-4 fw-bold text-teal mb-5 mt-4"
+          data-aos="fade-right"
+        >
+          What We <span className="text-yellow">Believe </span>In
           <p className="fst-italic fs-5 small-text letter-space text-muted pt-3">
-            everything you want to know
+            The values that guide everything we do
           </p>
         </h2>
 
         <div className="row g-4 justify-content-center">
           <div className="col-12 col-md-4">
-            <div className="card border-0 shadow-sm h-100 p-4">
+            <div
+              className="card border-0 shadow-sm h-100 p-4"
+              data-aos="fade-right"
+            >
               <div className="card-body">
                 <h5 className="card-title fw-bold text-yellow mb-3 fs-3">
                   Our Passion for Food
@@ -37,7 +39,10 @@ function WhoWeAre() {
           </div>
 
           <div className="col-12 col-md-4">
-            <div className="card border-0 shadow-sm h-100 p-4">
+            <div
+              className="card border-0 shadow-sm h-100 p-4"
+              data-aos="fade-right"
+            >
               <div className="card-body">
                 <h5 className="card-title fw-bold text-yellow mb-3 fs-3">
                   Our Commitment to Quality
@@ -53,7 +58,10 @@ function WhoWeAre() {
           </div>
 
           <div className="col-12 col-md-4">
-            <div className="card border-0 shadow-sm h-100 p-4">
+            <div
+              className="card border-0 shadow-sm h-100 p-4"
+              data-aos="fade-right"
+            >
               <div className="card-body">
                 <h5 className="card-title fw-bold text-yellow mb-3 fs-3">
                   Our Promise to You
