@@ -16,11 +16,11 @@ function Highlights() {
     //     <Button name="Online Menu" />
     //   </div>
     // </div>
-    <div className="container-fluid  w-100 h-auto py-3 px-5 px-lg-0 my-4 mx-auto ">
+    <div className="container-fluid  w-100 h-auto py-3 px-5 px-0 my-4 mx-auto ">
       <h1 className="weekly-special-heading display-5 fw-bold px-5 mt-3 text-teal text-center">
         Popular <span className="text-yellow">Desserts</span> You Can't Miss
       </h1>
-      <div className="d-flex flex-column align-items-center d-md-flex flex-md-row justify-content-evenly align-items-md-stretch px-md-5 py-5 gy-4 gap-3">
+      <div className="d-flex flex-column align-items-center d-md-flex flex-md-row justify-content-evenly align-items-md-stretch px-md-3 py-5 gy-4 gap-3">
         <Card
           image={dish1}
           name="Crepes with strawberries and chocolate"

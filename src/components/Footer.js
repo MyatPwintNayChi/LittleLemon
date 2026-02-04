@@ -1,8 +1,15 @@
 import Logo from "../images/Logo-removebg-preview.png";
+import React from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Footer() {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
-    <footer className="bg-success-subtle  pt-5 pb-3 ">
+    <footer className="bg-success-subtle  pt-5 pb-3 " data-aos="fade-left">
       <div className="container text-center">
         <div className="row text-center text-md-start">
           {/* Column 1 - Logo & About */}
