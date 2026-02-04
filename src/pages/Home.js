@@ -6,6 +6,7 @@ import WhyUsSection from "../components/WhyUsSection";
 
 import Menu from "../components/Menu";
 import MeetOurStaff from "../components/MeetOurStaff";
+import Testimonials from "../components/Testimonials";
 
 function Home() {
   return (
@@ -15,7 +16,7 @@ function Home() {
       <Menu />
       <Highlights />
       <WhyUsSection />
-      <MeetOurStaff />
+      <Testimonials />
       <Footer />
     </div>
   );
