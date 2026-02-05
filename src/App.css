@@ -313,3 +313,28 @@
   height: 80px;
   object-fit: cover;
 }
+
+.contact-hero {
+  background-color: rgb(46, 92, 50); /* #284f2b with 80% opacity */
+  height: 60vh;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.contact-image {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+
+.contact-left-section {
+  width: 55%;
+}
+.contact-right-section {
+  width: 45%;
+}
