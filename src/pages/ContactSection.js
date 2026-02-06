@@ -3,40 +3,31 @@ import Header from "../components/Header";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import HeroImage from "../images/Gemini_Generated_Image_rkrbaarkrbaarkrb.png";
+import HeroImage from "../images/Gemini_Generated_Image_yizg25yizg25yizg.png";
 
 function ContactSection() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <div className=" main">
-      {/* HERO SECTION */}
+    <div className="container-fluid main mx-0 px-0">
       <Header />
-      <div className="d-flex align-items-center justify-content-center w-100">
-        <section
-          className="text-white contact-hero text-center py-5  d-flex flex-column contact-left-section justify-content-center align-items-center ps-5"
-          data-aos="fade-right"
-          // style={{
-          //   backgroundImage:
-          //     "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/restaurant-interior.jpg')",
-          //   backgroundSize: "cover",
-          //   backgroundPosition: "center",
-          // }}
-        >
-          <p className="display-3 text-center fw-bold  text-uppercase letter-space about-text">
-            Contact Us
+
+      <div className="contact-hero-container " data-aos="fade-right">
+        <img src={HeroImage} alt="Contact Hero" className="contact-hero " />
+        <div className="contact-hero-overlay"></div>
+        <div className="contact-hero-content text-center text-white">
+          <h1 className="display-4 fw-bold">Contact Us</h1>
+          <p className="fs-5 fst-italic">
+            We’re here to help — get in touch with Little Lemon
           </p>
-        </section>
-        <div className="contact-right-section">
-          <img src={HeroImage} alt="Hero" className=" contact-image " />
         </div>
       </div>
 
       {/* GET IN TOUCH */}
-      <section className="py-5" style={{ backgroundColor: "#FDFBF7" }}>
+      <section className="py-5 " style={{ backgroundColor: "#FDFBF7" }}>
         <div className="container">
-          <div className="row align-items-center g-5">
+          <div className="row align-items-center ">
             {/* Text */}
             <div className="col-lg-6">
               <small className="text-uppercase text-muted">Contact</small>
@@ -70,7 +61,7 @@ function ContactSection() {
       {/* FORM + OPENING HOURS */}
       <section className="py-5" style={{ backgroundColor: "#EDEFEE" }}>
         <div className="container">
-          <div className="row g-5 align-items-start">
+          <div className="row  align-items-start">
             {/* FORM */}
             <div className="col-lg-6">
               <div
@@ -168,7 +159,7 @@ function ContactSection() {
       {/* FAQ */}
       <section className="py-5" style={{ backgroundColor: "#FDFBF7" }}>
         <div className="container">
-          <div className="row g-5">
+          <div className="row ">
             <div className="col-lg-4">
               <small className="text-uppercase text-muted">FAQs</small>
               <h2 className="fw-bold" style={{ color: "#495E57" }}>

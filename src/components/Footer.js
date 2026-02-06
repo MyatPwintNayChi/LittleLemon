@@ -9,8 +9,8 @@ function Footer() {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <footer className="bg-success-subtle  pt-5 pb-3 " data-aos="fade-left">
-      <div className="container text-center">
+    <footer className="bg-success-subtle  pt-5 pb-3  " data-aos="fade-up">
+      <div className="container text-center ">
         <div className="row text-center text-md-start">
           {/* Column 1 - Logo & About */}
           <div className="col-12 col-md-4 mb-4">
