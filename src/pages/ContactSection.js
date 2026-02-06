@@ -4,6 +4,10 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import HeroImage from "../images/Gemini_Generated_Image_yizg25yizg25yizg.png";
+import LocationIcon from "../images/location.png";
+import PhoneIcon from "../images/telephone.png";
+import EmailIcon from "../images/mail.png";
+import Res_Image from "../images/res.png";
 
 function ContactSection() {
   useEffect(() => {
@@ -17,8 +21,8 @@ function ContactSection() {
         <img src={HeroImage} alt="Contact Hero" className="contact-hero " />
         <div className="contact-hero-overlay"></div>
         <div className="contact-hero-content text-center text-white">
-          <h1 className="display-4 fw-bold">Contact Us</h1>
-          <p className="fs-5 fst-italic">
+          <h1 className="display-4 fw-bold text-yellow">Our Contact </h1>
+          <p className="fst-italic fs-4 small-text letter-space text-center">
             We’re here to help — get in touch with Little Lemon
           </p>
         </div>
@@ -29,29 +33,46 @@ function ContactSection() {
         <div className="container">
           <div className="row align-items-center ">
             {/* Text */}
-            <div className="col-lg-6">
-              <small className="text-uppercase text-muted">Contact</small>
-              <h2 className="fw-bold mb-3" style={{ color: "#495E57" }}>
-                Get in Touch
+            <div className="col-lg-7 ">
+              <small className="text-uppercase text-teal fs-4 ">Contact</small>
+              <h2
+                className="fw-bold my-3 display-5"
+                style={{ color: "#495E57" }}
+              >
+                Get in <span className="text-yellow">Touch</span>
               </h2>
-              <p className="text-muted">
+              <p className="text-teal fs-4">
                 Whether you have a question about our menu, reservations, or
-                special events, our team is happy to help.
+                special events, our team <br />
+                is happy to help.
               </p>
 
-              <ul className="list-unstyled text-muted">
-                <li className="mb-2">📍 123 Mediterranean Ave, Chicago</li>
-                <li className="mb-2">📞 +1 (312) 555-7890</li>
-                <li>✉️ hello@littlelemon.com</li>
+              <ul className="list-unstyled text-teal fs-5 mt-4">
+                <li className="mb-2">
+                  <img
+                    src={LocationIcon}
+                    alt="Location"
+                    className="contact-icon"
+                  />{" "}
+                  123 Lemon Street, Bangkok, Thailand
+                </li>
+                <li className="mb-2">
+                  <img src={PhoneIcon} alt="Phone" className="contact-icon" />{" "}
+                  +66 123 456 789
+                </li>
+                <li className="mb-2">
+                  <img src={EmailIcon} alt="Email" className="contact-icon" />{" "}
+                  hello@littlelemon.com
+                </li>
               </ul>
             </div>
 
             {/* Image */}
-            <div className="col-lg-6">
+            <div className="col-lg-5">
               <img
-                src="/images/contact-interior.jpg"
+                src={Res_Image}
                 alt="Little Lemon Interior"
-                className="img-fluid rounded-4 shadow"
+                className="img-fluid rounded-4 shadow get-in-touch-img"
               />
             </div>
           </div>

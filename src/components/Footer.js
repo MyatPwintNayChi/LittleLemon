@@ -3,6 +3,9 @@ import React from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import LocationIcon from "../images/location.png";
+import PhoneIcon from "../images/telephone.png";
+import EmailIcon from "../images/mail.png";
 
 function Footer() {
   useEffect(() => {
@@ -55,9 +58,18 @@ function Footer() {
             <h5 className="fw-bold mb-3 text-teal fs-3">
               Contact <span className="text-yellow">Us</span>{" "}
             </h5>
-            <p className="mb-1 small">📍 123 Lemon Street, Bangkok, Thailand</p>
-            <p className="mb-1 small">📞 +66 123 456 789</p>
-            <p className="mb-0 small">✉️ info@littlelemon.com</p>
+            <p className="mb-1 small">
+              <img src={LocationIcon} alt="Location" className="footer-icon" />{" "}
+              123 Lemon Street, Bangkok, Thailand
+            </p>
+            <p className="mb-1 small">
+              <img src={PhoneIcon} alt="Phone" className="footer-icon" /> +66
+              123 456 789
+            </p>
+            <p className="mb-0 small">
+              <img src={EmailIcon} alt="Email" className="footer-icon" />{" "}
+              hello@littlelemon.com
+            </p>
           </div>
         </div>
 
