@@ -7,7 +7,7 @@ import HeroImage from "../images/Gemini_Generated_Image_yizg25yizg25yizg.png";
 import LocationIcon from "../images/location.png";
 import PhoneIcon from "../images/telephone.png";
 import EmailIcon from "../images/mail.png";
-import Res_Image from "../images/res.png";
+import Res_Image from "../images/res2.png";
 
 function ContactSection() {
   useEffect(() => {
@@ -29,16 +29,17 @@ function ContactSection() {
       </div>
 
       {/* GET IN TOUCH */}
-      <section className="py-5 " style={{ backgroundColor: "#FDFBF7" }}>
+      <section
+        className="py-5 "
+        style={{ backgroundColor: "#FDFBF7" }}
+        data-aos="fade-up"
+      >
         <div className="container">
           <div className="row align-items-center ">
             {/* Text */}
             <div className="col-lg-7 ">
               <small className="text-uppercase text-teal fs-4 ">Contact</small>
-              <h2
-                className="fw-bold my-3 display-5"
-                style={{ color: "#495E57" }}
-              >
+              <h2 className="fw-bold my-3 display-5 text-teal">
                 Get in <span className="text-yellow">Touch</span>
               </h2>
               <p className="text-teal fs-4">
@@ -80,14 +81,17 @@ function ContactSection() {
       </section>
 
       {/* FORM + OPENING HOURS */}
-      <section className="py-5" style={{ backgroundColor: "#EDEFEE" }}>
+      <section
+        className=" custom-contact-padding"
+        style={{ backgroundColor: "#EDEFEE" }}
+      >
         <div className="container">
-          <div className="row  align-items-start">
+          <div className="row  align-items-center ">
             {/* FORM */}
-            <div className="col-lg-6">
+            <div className="col-lg-6 contact-form " data-aos="fade-right">
               <div
-                className="p-4 rounded-4 text-white"
-                style={{ backgroundColor: "#495E57" }}
+                className="p-4 py-lg-5 rounded-4  text-white text-center"
+                style={{ backgroundColor: " #28452a" }}
               >
                 <form>
                   <div className="mb-3">
@@ -125,7 +129,7 @@ function ContactSection() {
 
                   <button
                     type="submit"
-                    className="btn fw-bold px-4"
+                    className="btn fw-bold px-4 text-uppercase "
                     style={{
                       backgroundColor: "#F4CE14",
                       color: "#495E57",
@@ -138,20 +142,26 @@ function ContactSection() {
             </div>
 
             {/* OPENING HOURS */}
-            <div className="col-lg-6">
-              <small className="text-uppercase text-muted">Contact</small>
-              <h3 className="fw-bold mb-3" style={{ color: "#495E57" }}>
-                Send Us a Message
+            <div
+              className="col-lg-6 ps-3 ps-lg-5 mt-5 mt-lg-0"
+              data-aos="fade-left"
+            >
+              <small className="text-uppercase text-teal fs-4">Contact</small>
+              <h3 className="fw-bold my-3 display-5 text-teal">
+                Send Us a <span className="text-yellow">Message</span>
               </h3>
-              <p className="text-muted">
+              <p className="text-teal fs-4">
                 We usually respond within 24 hours during business days.
               </p>
 
-              <h6 className="fw-bold mt-4">Opening Hours</h6>
-              <p className="mb-1 text-muted">
-                Monday – Saturday: 8:00 AM – 10:00 PM
+              <h6 className="fw-bold mt-4 fs-4 ">Opening Hours</h6>
+              <p className="mb-1 text-teal fs-5">
+                Monday – Friday: 10:00 AM – 10:30 PM
               </p>
-              <p className="text-muted">Sunday: 10:00 AM – 11:00 PM</p>
+              <p className="text-teal fs-5 mb-1">
+                Saturday: 11:00 AM – 10:30 PM
+              </p>
+              <p className="text-danger fw-semibold fs-5">Sunday:Closed</p>
 
               {/* Social icons placeholder */}
               <div className="d-flex gap-3 mt-3">
