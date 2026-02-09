@@ -8,6 +8,10 @@ import LocationIcon from "../images/location.png";
 import PhoneIcon from "../images/telephone.png";
 import EmailIcon from "../images/mail.png";
 import Res_Image from "../images/res2.png";
+import Gmail from "../images/communication.png";
+import Facebook from "../images/facebook.png";
+import Instagram from "../images/instagram.png";
+import Line from "../images/line.png";
 
 function ContactSection() {
   useEffect(() => {
@@ -165,10 +169,22 @@ function ContactSection() {
 
               {/* Social icons placeholder */}
               <div className="d-flex gap-3 mt-3">
-                <span>🌐</span>
-                <span>📘</span>
-                <span>📸</span>
-                <span>🐦</span>
+                <span>
+                  <img src={Facebook} alt="Facebook" className="social-icon" />
+                </span>
+                <span>
+                  <img
+                    src={Instagram}
+                    alt="Instagram"
+                    className="social-icon"
+                  />
+                </span>
+                <span>
+                  <img src={Line} alt="Line" className="social-icon" />
+                </span>
+                <span>
+                  <img src={Gmail} alt="Gmail" className="social-icon" />
+                </span>
               </div>
             </div>
           </div>
