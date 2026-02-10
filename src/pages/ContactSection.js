@@ -216,17 +216,20 @@ function ContactSection() {
       </section>
 
       {/* FAQ */}
-      <section className="py-5">
+      <section
+        className="custom-contact-padding"
+        style={{ backgroundColor: "#EDEFEE" }}
+      >
         <div className="container">
           <div className="row ">
-            <div className="col-lg-4">
-              <small className="text-uppercase text-muted">FAQs</small>
-              <h2 className="fw-bold" style={{ color: "#495E57" }}>
-                Frequently Asked Questions
+            <div className="col-lg-4" data-aos="fade-right">
+              <small className="text-uppercase text-teal fs-4">FAQs</small>
+              <h2 className="fw-bold my-3 display-5 text-teal">
+                <span className="text-yellow"> Frequently</span> Asked Questions
               </h2>
             </div>
 
-            <div className="col-lg-8">
+            <div className="col-lg-8 mt-4 mt-lg-0" data-aos="fade-left">
               <div className="accordion" id="faqAccordion">
                 {[
                   "How long has Little Lemon been established?",
