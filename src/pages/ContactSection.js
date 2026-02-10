@@ -8,10 +8,10 @@ import LocationIcon from "../images/location.png";
 import PhoneIcon from "../images/telephone.png";
 import EmailIcon from "../images/mail.png";
 import Res_Image from "../images/res2.png";
-import Gmail from "../images/communication.png";
-import Facebook from "../images/facebook.png";
-import Instagram from "../images/instagram.png";
-import Line from "../images/line.png";
+import Gmail from "../images/mail (1).png";
+import Facebook from "../images/facebook (1).png";
+import Instagram from "../images/instagram (1).png";
+import Line from "../images/line (1).png";
 
 function ContactSection() {
   useEffect(() => {
@@ -183,7 +183,9 @@ function ContactSection() {
                   <img src={Line} alt="Line" className="social-icon" />
                 </span>
                 <span>
-                  <img src={Gmail} alt="Gmail" className="social-icon" />
+                  <div className="bg-circle">
+                    <img src={Gmail} alt="Gmail" className="social-icon" />
+                  </div>
                 </span>
               </div>
             </div>
@@ -192,19 +194,29 @@ function ContactSection() {
       </section>
 
       {/* MAP */}
-      <section>
-        <iframe
-          title="Little Lemon Location"
-          src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          width="100%"
-          height="400"
-          style={{ border: 0 }}
-          loading="lazy"
-        ></iframe>
+      <section
+        className="custom-contact-padding "
+        style={{ backgroundColor: "#FDFBF7" }}
+        data-aos="fade-up"
+      >
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-9">
+              <iframe
+                title="Little Lemon Location"
+                src="https://maps.google.com/maps?q=thailand&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-5" style={{ backgroundColor: "#FDFBF7" }}>
+      <section className="py-5">
         <div className="container">
           <div className="row ">
             <div className="col-lg-4">
