@@ -4,10 +4,11 @@ import Button from "../components/Button";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import image from "../images/Reserved Sign for Restaurants Bars Cafes _ Personalized Reserved Table Signs _ Sign for Business _ Reception Sign _ Hotel Sign - Etsy.jpeg";
+import image from "../images/res.png";
 import Footer from "../components/Footer";
 import LemonImage from "../images/lemon.png";
 import CloseImage from "../images/closed.png";
+
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { db } from "../firebase";
 
@@ -135,83 +136,85 @@ function Reservation() {
   };
 
   return (
-    <div className="container-fluid main mx-0 px-0 bg-white ">
+    <div className="container-fluid main mx-0 px-0 reservation-page-bg">
       <Header />
-      <div
+      {/* <div
         className=" mt-5 reservation-bg d-flex flex-column justify-content-center align-items-center"
         data-aos="fade-right"
       >
-        {/* <h1 className=" fw-bold   display-4 text-secondreserved">
-          Reservation
-        </h1> */}
         <p className="display-3 text-center fw-bold  text-uppercase letter-space about-text">
           Reservation
         </p>
-        {/* <p className="text-center text-reserved fst-italic mb-3 fs-5 pb-4 fw-bold w-50">
-          Enjoy a cozy dining experience at Little Lemon. Reserve your table in
-          advance and let us prepare your perfect meal.
-        </p> */}
+
         <p className="fst-italic fs-4 small-text letter-space text-center">
           Reserve your table in just a few steps.
         </p>
+      </div> */}
+      <div className="text-center pt-5 mt-5">
+        <h1 className="text-yellow display-5 fw-bold pt-4 mt-lg-4">
+          Book a Table <span className="text-teal"> &nbsp;With Us</span>
+        </h1>
+        <p className="text-dark fs-5 fst-italic mt-3 mb-5 pb-3 w-50 mx-auto">
+          Please fill in the details below to reserve your table. We’ll prepare
+          everything in advance to make sure your visit is comfortable, smooth,
+          and enjoyable.
+        </p>
       </div>
-      <div className=" form_bg">
-        <div className="text-center pt-5 ">
-          <h1 className="text-yellow display-5 fw-bold pt-4">
-            Book a Table <span className="text-teal"> &nbsp;With Us</span>
-          </h1>
-          <p className="text-dark fs-5 fst-italic mt-3 mb-5 pb-3 w-50 mx-auto">
-            Please fill in the details below to reserve your table. We’ll
-            prepare everything in advance to make sure your visit is
-            comfortable, smooth, and enjoyable.
-          </p>
-        </div>
-        <div className="container px-3 px-sm-4 px-md-0 pb-0 pb-lg-5 ">
-          <form
-            onSubmit={handleSubmit}
-            className="mx-auto  border border-success shadow-lg p-5 rounded-4  mb-5 bg-white"
-            style={{ maxWidth: "980px" }}
-            data-aos="fade-right"
-            method="POST"
-          >
-            <div className="row">
-              <div className="col-md-6 mb-3">
-                <label
-                  className="form-label text-teal fw-semibold fs-5"
-                  for="name"
-                >
-                  Name*
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  className="form-control fs-5"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+      <div className="container-fluid px-0">
+        <div className="row g-0   ">
+          <div className="col-xl-5 d-flex">
+            <img
+              src={image}
+              alt="Reservation"
+              className="w-100 h-100  reservation-image"
+            />
+          </div>
 
-              <div className="col-md-6 mb-3">
-                <label className="form-label text-teal fw-semibold fs-5">
-                  Email*
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  className="form-control fs-5"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
+          <div className="col-xl-7 d-flex align-items-center justify-content-center bg-light">
+            <form
+              onSubmit={handleSubmit}
+              className="  border  shadow-lg p-5 rounded-4   bg-light my-5 my-xl-0 reservation-form"
+              data-aos="fade-right"
+              method="POST"
+            >
+              <div className="row">
+                <div className="col-md-6 mb-3">
+                  <label
+                    className="form-label text-teal fw-semibold fs-5"
+                    for="name"
+                  >
+                    Name*
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    className="form-control fs-5"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className="col-md-6 mb-3">
+                  <label className="form-label text-teal fw-semibold fs-5">
+                    Email*
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    className="form-control fs-5"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-md-6 mb-3">
-                <label className="form-label text-teal fw-semibold fs-5">
-                  Phone Number*
-                </label>
-                {/* <input
+              <div className="row">
+                <div className="col-md-6 mb-3">
+                  <label className="form-label text-teal fw-semibold fs-5">
+                    Phone Number*
+                  </label>
+                  {/* <input
                   type="tel"
                   name="phone"
                   className="form-control fs-5"
@@ -220,98 +223,101 @@ function Reservation() {
                   required
                 /> */}
 
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="0X-XXXX-XXXX"
+                    pattern="0[0-9]{9}"
+                    maxLength="10"
+                    required
+                    className="form-control fs-5"
+                  />
+                </div>
+
+                <div className="col-md-6 mb-3">
+                  <label className="form-label text-teal fw-semibold fs-5">
+                    Guests*
+                  </label>
+                  <input
+                    type="number"
+                    name="guests"
+                    className="form-control fs-5"
+                    min="1"
+                    max="6"
+                    value={formData.guests}
+                    onChange={handleChange}
+                    required
+                  />
+                  <small className="text-yellow   fw-bold fs-6">
+                    Maximum 6 guests.
+                  </small>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6 mb-3">
+                  <label className="form-label text-teal fw-semibold fs-5">
+                    Date*
+                  </label>
+                  <input
+                    type="date"
+                    className="form-control fs-5"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleDateChange}
+                    min={new Date().toISOString().split("T")[0]}
+                    required
+                  />
+                </div>
+
+                <div className="col-md-6 mb-3">
+                  <label className="form-label text-teal fw-semibold fs-5">
+                    Time*
+                  </label>
+                  <select
+                    className="form-select fs-5 text-muted"
+                    name="time"
+                    value={formData.time}
+                    onChange={handleTimeChange}
+                    disabled={!formData.date}
+                  >
+                    <option value="">Select time</option>
+                    {generateTimes(timeLimits.min, timeLimits.max).map(
+                      (time) => (
+                        <option key={time} value={time}>
+                          {time}
+                        </option>
+                      ),
+                    )}
+                  </select>
+                  <small className="text-yellow   fw-bold fs-6">
+                    {formData.date
+                      ? `Available from ${timeLimits.min} to ${timeLimits.max}`
+                      : "Please select a date to see available times."}
+                  </small>
+                </div>
+              </div>
+
+              <div className="mb-4">
+                <label className="form-label text-teal fw-semibold fs-5">
+                  Special Request
+                </label>
+                <textarea
+                  name="request"
+                  className="form-control fs-5"
+                  rows="5"
+                  placeholder="Optional"
+                  value={formData.request}
                   onChange={handleChange}
-                  placeholder="0X-XXXX-XXXX"
-                  pattern="0[0-9]{9}"
-                  maxLength="10"
-                  required
-                  className="form-control fs-5"
-                />
+                ></textarea>
               </div>
 
-              <div className="col-md-6 mb-3">
-                <label className="form-label text-teal fw-semibold fs-5">
-                  Guests*
-                </label>
-                <input
-                  type="number"
-                  name="guests"
-                  className="form-control fs-5"
-                  min="1"
-                  max="6"
-                  value={formData.guests}
-                  onChange={handleChange}
-                  required
-                />
-                <small className="text-yellow   fw-bold fs-6">
-                  Maximum 6 guests.
-                </small>
+              <div className="text-center">
+                <Button name="Reserve Now" />
               </div>
-            </div>
-            <div className="row">
-              <div className="col-md-6 mb-3">
-                <label className="form-label text-teal fw-semibold fs-5">
-                  Date*
-                </label>
-                <input
-                  type="date"
-                  className="form-control fs-5"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleDateChange}
-                  min={new Date().toISOString().split("T")[0]}
-                  required
-                />
-              </div>
-
-              <div className="col-md-6 mb-3">
-                <label className="form-label text-teal fw-semibold fs-5">
-                  Time*
-                </label>
-                <select
-                  className="form-select fs-5 text-muted"
-                  name="time"
-                  value={formData.time}
-                  onChange={handleTimeChange}
-                  disabled={!formData.date}
-                >
-                  <option value="">Select time</option>
-                  {generateTimes(timeLimits.min, timeLimits.max).map((time) => (
-                    <option key={time} value={time}>
-                      {time}
-                    </option>
-                  ))}
-                </select>
-                <small className="text-yellow   fw-bold fs-6">
-                  {formData.date
-                    ? `Available from ${timeLimits.min} to ${timeLimits.max}`
-                    : "Please select a date to see available times."}
-                </small>
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <label className="form-label text-teal fw-semibold fs-5">
-                Special Request
-              </label>
-              <textarea
-                name="request"
-                className="form-control fs-5"
-                rows="5"
-                placeholder="Optional"
-                value={formData.request}
-                onChange={handleChange}
-              ></textarea>
-            </div>
-
-            <div className="text-center">
-              <Button name="Reserve Now" />
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
 
@@ -496,6 +502,7 @@ function Reservation() {
           </div>
         </div>
       )}
+
       <div className="text-center mt-5 mb-5 ">
         <h3 className="fw-bold text-teal mb-3 fs-3 ">Operating Hours</h3>
         <p className="mb-1 fs-5">Monday – Friday: 10:00 AM – 10:30 PM</p>

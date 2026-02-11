@@ -274,7 +274,9 @@
   height: 80vh;
   background-color: rgba(0, 0, 0, 0.4); 
 } */
-
+.reservation-image {
+  object-fit: cover;
+}
 .reservation-bg {
   position: relative;
   background-image: url("./images/Screenshot\ 2568-11-20\ at\ 20.53.50.png");
@@ -291,7 +293,7 @@
 }
 
 .form_bg {
-  background-image: url("./images/form_bg.jpeg");
+  background-image: url("./images/res_bg3.png");
   background-size: cover;
 }
 .custom-confirm-img {
@@ -333,7 +335,7 @@
 .contact-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 .contact-hero-content {
@@ -387,9 +389,26 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .reservation-form {
+    min-width: 95%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .reservation-form {
+    min-width: 85%;
+  }
+}
+
 .social-icon {
   width: 28px;
   height: 28px;
   margin-right: 10px;
   cursor: pointer;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
 }

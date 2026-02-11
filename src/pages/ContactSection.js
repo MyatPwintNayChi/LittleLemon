@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import HeroImage from "../images/Gemini_Generated_Image_yizg25yizg25yizg.png";
+import HeroImage from "../images/Screenshot 2568-11-20 at 20.53.50.png";
 import LocationIcon from "../images/location.png";
 import PhoneIcon from "../images/telephone.png";
 import EmailIcon from "../images/mail.png";
@@ -17,6 +17,30 @@ function ContactSection() {
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
+
+  const faqs = [
+    {
+      question: "How long has Little Lemon been established?",
+      answer:
+        "Little Lemon has been serving fresh Mediterranean dishes for over 10 years.",
+    },
+    {
+      question: "Do you offer vegetarian options?",
+      answer:
+        "Yes, we have a variety of vegetarian and vegan-friendly dishes on our menu.",
+    },
+    {
+      question: "Can we host private events?",
+      answer:
+        "Absolutely! We offer private dining options for birthdays, celebrations, and corporate events.",
+    },
+    {
+      question: "Do you accept same-day reservations?",
+      answer:
+        "Yes, same-day reservations are accepted depending on availability.",
+    },
+  ];
+
   return (
     <div className="container-fluid main mx-0 px-0">
       <Header />
@@ -25,7 +49,7 @@ function ContactSection() {
         <img src={HeroImage} alt="Contact Hero" className="contact-hero " />
         <div className="contact-hero-overlay"></div>
         <div className="contact-hero-content text-center text-white">
-          <h1 className="display-4 fw-bold text-yellow">Our Contact </h1>
+          <h1 className="display-4 fw-bold text-yellow"> Contact Us </h1>
           <p className="fst-italic fs-4 small-text letter-space text-center">
             We’re here to help — get in touch with Little Lemon
           </p>
@@ -229,32 +253,28 @@ function ContactSection() {
               </h2>
             </div>
 
-            <div className="col-lg-8 mt-4 mt-lg-0" data-aos="fade-left">
+            <div className="col-lg-8 mt-4 mt-lg-0  " data-aos="fade-left">
               <div className="accordion" id="faqAccordion">
-                {[
-                  "How long has Little Lemon been established?",
-                  "Do you offer vegetarian options?",
-                  "Can we host private events?",
-                  "Do you accept same-day reservations?",
-                ].map((q, index) => (
+                {faqs.map((item, index) => (
                   <div className="accordion-item" key={index}>
                     <h2 className="accordion-header">
                       <button
-                        className="accordion-button collapsed"
+                        className="accordion-button collapsed fs-5 text-teal fst-italic fw-bold"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target={`#faq${index}`}
                       >
-                        {q}
+                        {item.question}
                       </button>
                     </h2>
+
                     <div
                       id={`faq${index}`}
                       className="accordion-collapse collapse"
                       data-bs-parent="#faqAccordion"
                     >
-                      <div className="accordion-body text-muted">
-                        Yes! Please contact us directly for more information.
+                      <div className="accordion-body text-teal fs-5">
+                        {item.answer}
                       </div>
                     </div>
                   </div>
