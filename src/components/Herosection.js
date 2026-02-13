@@ -1,4 +1,4 @@
-import mainImage2 from "../images/_ (2).jpeg";
+import mainImage2 from "../images/food.png";
 import { useNavigate } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import chefImg from "../images/Screenshot 2569-02-02 at 19.27.31.png";
-import restaurantImg from "../images/restauranfood.jpg";
+import restaurantImg from "../images/_ (1).jpeg";
 
 function OurStorySection() {
   useEffect(() => {
