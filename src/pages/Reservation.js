@@ -167,6 +167,7 @@ function Reservation() {
               src={image}
               alt="Reservation"
               className="w-100 h-100  reservation-image"
+              data-aos="fade-left"
             />
           </div>
 
