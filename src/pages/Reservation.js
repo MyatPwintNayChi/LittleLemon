@@ -150,7 +150,7 @@ function Reservation() {
           Reserve your table in just a few steps.
         </p>
       </div> */}
-      <div className="text-center pt-5 mt-5">
+      <div className="text-center pt-5 mt-5" data-aos="fade-right">
         <h1 className="text-yellow display-5 fw-bold pt-4 mt-lg-4">
           Book a Table <span className="text-teal"> &nbsp;With Us</span>
         </h1>
