@@ -136,7 +136,7 @@ function Reservation() {
   };
 
   return (
-    <div className="container-fluid main mx-0  px-0 bg-light">
+    <div className="container-fluid main mx-0  px-0 ">
       <Header />
       {/* <div
         className=" mt-5 reservation-bg d-flex flex-column justify-content-center align-items-center"
@@ -150,7 +150,7 @@ function Reservation() {
           Reserve your table in just a few steps.
         </p>
       </div> */}
-      <div className="text-center pt-5 mt-5 " data-aos="fade-right">
+      <div className="text-center pt-5 mt-5  " data-aos="fade-right">
         <h1 className="text-yellow display-5 fw-bold pt-4 mt-lg-4">
           Book a Table <span className="text-teal"> &nbsp;With Us</span>
         </h1>
@@ -171,7 +171,7 @@ function Reservation() {
             />
           </div>
 
-          <div className="col-xl-7 d-flex align-items-center justify-content-center ">
+          <div className="col-xl-7 d-flex align-items-center justify-content-center bg-light ">
             <form
               onSubmit={handleSubmit}
               className="  border  shadow-lg p-5 rounded-4 bg-white   my-5 my-xl-0 reservation-form"
@@ -504,7 +504,7 @@ function Reservation() {
         </div>
       )}
 
-      <div className="text-center mt-5 py-5  bg-white ">
+      <div className="text-center mt-5 mb-5  bg-white ">
         <h3 className="fw-bold text-teal mb-3 fs-3 ">Operating Hours</h3>
         <p className="mb-1 fs-5">Monday – Friday: 10:00 AM – 10:30 PM</p>
         <p className="mb-1 fs-5">Saturday: 11:00 AM – 10:30 PM</p>
