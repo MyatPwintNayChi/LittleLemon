@@ -63,7 +63,7 @@ function Menu() {
           data-bs-target="#menuCarousel"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon"></span>
+          <span className="carousel-control-prev-icon"></span>
         </button>
 
         <button
@@ -72,7 +72,7 @@ function Menu() {
           data-bs-target="#menuCarousel"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon"></span>
+          <span className="carousel-control-next-icon"></span>
         </button>
       </div>
     </div>

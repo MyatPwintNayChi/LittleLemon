@@ -9,6 +9,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import ChatWidget from "./components/ChatWidget";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/contact" element={<ContactSection />} />
         <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
+      <ChatWidget />
     </>
   );
 }
