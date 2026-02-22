@@ -18,9 +18,11 @@ const ChatWindow = ({ closeChat }) => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/chat", {
-        message: text,
-      });
+      //   const res = await axios.post("http://localhost:5000/api/chat", {
+      //     message: text,
+      //   });
+
+      const res = await axios.post("/api/chat", { message: text });
 
       const botMessage = { text: res.data.reply, sender: "bot" };
       setMessages((prev) => [...prev, botMessage]);
