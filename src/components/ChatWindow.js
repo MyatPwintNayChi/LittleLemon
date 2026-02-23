@@ -29,7 +29,7 @@ const ChatWindow = ({ closeChat }) => {
     } catch (error) {
       setMessages((prev) => [
         ...prev,
-        { text: "Error connecting to server.", sender: "bot" },
+        { text: "Error connecting to server....", sender: "bot" },
       ]);
     }
 
@@ -42,7 +42,7 @@ const ChatWindow = ({ closeChat }) => {
 
   return (
     <div
-      className="shadow-lg rounded-4 d-flex flex-column bg-white"
+      className="main shadow-lg rounded-4 d-flex flex-column bg-white"
       style={{
         position: "fixed",
         bottom: "90px",
@@ -52,11 +52,11 @@ const ChatWindow = ({ closeChat }) => {
       }}
     >
       <div className="bg-warning p-3 d-flex justify-content-between">
-        <strong>Little Lemon Chat</strong>
+        <strong className="fs-4 text-teal ">Little Lemon Chat</strong>
         <button className="btn-close" onClick={closeChat}></button>
       </div>
 
-      <div className="flex-grow-1 p-3 overflow-auto">
+      <div className="flex-grow-1 p-3 overflow-auto fs-5">
         {messages.map((msg, index) => (
           <ChatMessage key={index} message={msg} />
         ))}
