@@ -9,7 +9,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import ChatWidget from "./components/ChatWidget";
+import ChatWidget from "./components/Chatbot/ChatWidget";
 
 function App() {
   return (
